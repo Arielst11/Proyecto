@@ -16,6 +16,16 @@ public class Barco {
     public String coordenada;
     public int cantidad;
 
+    public Barco() {
+    }
+
+    public Barco(String tipo, int vida, int cantidad) {
+        this.tipo = tipo;
+        this.vida = vida;
+        this.cantidad = cantidad;
+    }
+
+    
     public void danado() {
 
     }

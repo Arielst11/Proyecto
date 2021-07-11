@@ -11,10 +11,12 @@ package proyecto;
  */
 public class CPU {
 
-    public String nombre;
+    private String nombre;
     public int cantVictoria;
     public int cantDerrota;
 
+    
+    
     public void atacar() {
 
     }
@@ -29,6 +31,20 @@ public class CPU {
 
     public void perder() {
 
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
 
