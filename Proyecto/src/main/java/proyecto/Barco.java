@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author asanc
@@ -13,29 +15,100 @@ public class Barco {
 
     public String tipo;
     public int vida;
-    public String coordenada;
-    public int cantidad;
+    public int coordenadaX;
+    public int coordenadaY;
 
     public Barco() {
     }
 
-    public Barco(String tipo, int vida, int cantidad) {
+    public Barco(String tipo, int vida) {
         this.tipo = tipo;
         this.vida = vida;
         this.cantidad = cantidad;
     }
 
     
-    public void danado() {
+    
+   //traduccion de Letras a numeros y asignacion de coordenadaX(letra)
+    
+   public void asignacionCoordenadaX(String letra){
+       int coordenadaX;
+       if (letra.equals("A")) {
+      coordenadaX = 1;
+      coordenadaX = this.coordenadaX;
+       }
+       if (letra.equals("B")) {     
+      coordenadaX = 2;  
+      coordenadaX = this.coordenadaX;
+       }
+      if (letra.equals("C")) {     
+      coordenadaX = 3; 
+      coordenadaX = this.coordenadaX;
+       }
+       if (letra.equals("D")) { 
+       coordenadaX = 4;
+       coordenadaX = this.coordenadaX;
+       }
+       if (letra.equals("E")) {    
+      coordenadaX = 5;
+      coordenadaX = this.coordenadaX;
+       }
+       if (letra.equals("F")) {
+      coordenadaX = 6;   
+      coordenadaX = this.coordenadaX;
+       }
+   JOptionPane.showMessageDialog(null, "Usted selecciono la fila "+ letra);
+       
+   }
 
-    }
+   
+   //traduccion de Letras a numeros y asignacion de coordenadaX(letra)
+  
+   public void asignacionCoordenadaY (String numero){
+         int coordenadaY;
+         if(numero.equals("1")){
+             coordenadaY = 1;
+             this.coordenadaY = coordenadaY;
+              } 
+           if(numero.equals("2")){
+             coordenadaY = 2;
+             this.coordenadaY = coordenadaY;
+              } 
+           if(numero.equals("3")){
+             coordenadaY = 3;
+             this.coordenadaY = coordenadaY;
+              } 
+           if(numero.equals("4")){
+             coordenadaY = 4;
+             this.coordenadaY = coordenadaY;
+              } 
+           if(numero.equals("5")){
+             coordenadaY = 6;
+             this.coordenadaY = coordenadaY;
+              } 
+       if(numero.equals("6")){
+             coordenadaY = 6;        
+             this.coordenadaY = coordenadaY;
+              } 
+  JOptionPane.showMessageDialog(null, "Usted selecciono la columna "+ numero);
+   
+   }
 
-    public void nuevo() {
-
-    }
-
-    public void destruido() {
-
-    }
-
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

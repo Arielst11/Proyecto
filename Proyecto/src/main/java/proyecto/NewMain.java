@@ -18,11 +18,29 @@ public class NewMain {
         Jugador jugador1 = new Jugador();
         Menu menu1 = new Menu();
         CPU CPU1 = new CPU();
-        Barco Almirante = new Barco("Almirante", 4, 1);
-        Barco Capitan = new Barco("Capitan", 3, 2);
-        Barco Teniente = new Barco("Teniente", 1, 3);
+    
+       // se crean los barcos mediante el constructor para el jugador
        
+       Barco jugadorAlmirante1 = new Barco("a",4);
+       Barco jugadorCapitan1 = new Barco("c",3);
+       Barco jugadorCapitan2 = new Barco("c",3);
+       Barco jugadorTeniente1 = new Barco("t",1);
+       Barco jugadorTeniente2 = new Barco("t",1);
+       Barco jugadorTeniente3 = new Barco("t",1);
+         
+        // se crean los barcos mediante el constructor para el CPU 
+         
+       Barco cpuAlmirante1 = new Barco("a",4);
+       Barco cpuCapitan1 = new Barco("c",3);
+       Barco cpuCapitan2 = new Barco("c",3);
+       Barco cpuTeniente1 = new Barco("t",1);
+       Barco cpuTeniente2 = new Barco("t",1);
+       Barco cpuTeniente3 = new Barco("t",1);
         
+        
+        
+         
+         
         //INICIO DEL PROGRAMA! *************************************************
         
         //se inicia el programa, se pregunta si se quiere jugar o no, no = termina el programa.
@@ -37,21 +55,46 @@ public class NewMain {
         String cpuNombre = JOptionPane.showInputDialog("Escriba el nombre del contrincante (CPU) ");
         CPU1.setNombre(cpuNombre);
     
-        // falta programar el tablero, ubicacion de barcos del usuario y CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // antes de continuar, hay que completar el tablero, ubicacion de barcos del usuario y del CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        JOptionPane.showMessageDialog(null, "Creando tableros de juego");
         
+        //Se crea el objeto Tablero para usar los metodos ya programados en esa clase.
+        // se crea el arreglo String TableroPropio y se rellenan los campos principales;
+        //se imprime para ver el resultado.
         
+        Tablero tableroPropio = new Tablero();
+        String tableroPropio1 [][] = new String[7][7];
         
-        
+       tableroPropio.creacionMarTablero(tableroPropio1);
+       tableroPropio.creacionFilaColumna(tableroPropio1);
+       tableroPropio.mostrarMapa(tableroPropio1);
        
        
+         JOptionPane.showMessageDialog(null, "Para jugar, usted debe agregar 6 barcos, usted tiene 1 barco Almirante, 2 barcos Capitan y 3 barcos Teniente ");    
+       //se piden las coordenadas de los barcos y se ingresan al tableroPropio1 (arreglo)
+      //coordenadas barco Almirante.
+         String fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Admirante");
+         jugadorAlmirante1.asignacionCoordenadaX(fila);
+         int coordenadaX = jugadorAlmirante1.coordenadaX;
+         System.out.println(coordenadaX);
+         String columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Admirante");
+         jugadorAlmirante1.asignacionCoordenadaY(columna);
+         int coordenadaY = jugadorAlmirante1.coordenadaY;
+         System.out.println(coordenadaY);   
+          
+        
+ 
+   
+      
+        
+       // falta programar el tablero, ubicacion de barcos del usuario y CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         /* este es el menu de opciones que tiene el jugador, meter todo esto como un metodo y llamarlo cada vez que el jugador tiene el turno. (falta completar las opciones), el turno del jugador termina solo
        si selecciona el caso 1.*/
         
         
         menu1.opcionesMenu();
-       int interruptor = 1;
-       while (interruptor == 1){
+       int terminadorTurno = 1;
+       while (terminadorTurno == 1){
        int seleccion = Integer.parseInt(JOptionPane.showInputDialog("Escriba el numero de la opcion que quiere realizar"));
         switch (seleccion){
             
@@ -59,7 +102,7 @@ public class NewMain {
             // programar los ataques cuando se tenga listo el tablero del usuario y del CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             case 1: 
                 
-                interruptor = 2;
+                terminadorTurno = 2;
                 JOptionPane.showMessageDialog(null, "Su turno ha terminado, el jugador " + CPU1.getNombre()+ " va a atacar ");
                 break;
            // programar el tablero de ataque !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -82,10 +125,5 @@ public class NewMain {
             
         } 
        }
-         
-    
-    
-    
-    }
-
-}
+    }  
+    } 
