@@ -24,7 +24,6 @@ public class Barco {
     public Barco(String tipo, int vida) {
         this.tipo = tipo;
         this.vida = vida;
-        this.cantidad = cantidad;
     }
 
     
