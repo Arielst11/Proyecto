@@ -51,7 +51,14 @@ public class Tablero {
      }
       }
 
-        
+       
+  
+  
+  public void ingresaCoordenadasXYTablero(String Tablero [][], int coordenadaX, int coordenadaY, String tipoBarco){
+    
+    Tablero [coordenadaX][coordenadaY] = tipoBarco;
+    
+}
      }
      
  

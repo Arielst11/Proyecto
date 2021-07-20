@@ -39,8 +39,7 @@ public class NewMain {
         
         
         
-         
-         
+           
         //INICIO DEL PROGRAMA! *************************************************
         
         //se inicia el programa, se pregunta si se quiere jugar o no, no = termina el programa.
@@ -70,8 +69,9 @@ public class NewMain {
        
        
          JOptionPane.showMessageDialog(null, "Para jugar, usted debe agregar 6 barcos, usted tiene 1 barco Almirante, 2 barcos Capitan y 3 barcos Teniente ");    
-       //se piden las coordenadas de los barcos y se ingresan al tableroPropio1 (arreglo)
-      //coordenadas barco Almirante.
+        //se piden las coordenadas de los barcos y se ingresan al tableroPropio1 (arreglo)
+        
+        //coordenadas barco Almirante1 (del jugador)
          String fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Admirante");
          jugadorAlmirante1.asignacionCoordenadaX(fila);
          int coordenadaX = jugadorAlmirante1.coordenadaX;
@@ -80,13 +80,80 @@ public class NewMain {
          jugadorAlmirante1.asignacionCoordenadaY(columna);
          int coordenadaY = jugadorAlmirante1.coordenadaY;
          System.out.println(coordenadaY);   
-          
+        // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]" Con un metodo
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorAlmirante1.coordenadaX, jugadorAlmirante1.coordenadaY, jugadorAlmirante1.tipo);
         
- 
-   
-      
-        
-       // falta programar el tablero, ubicacion de barcos del usuario y CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // coordenadas del barco Capitan1 (del jugador)
+         fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Capitan 1");
+         jugadorCapitan1.asignacionCoordenadaX(fila);
+         coordenadaX = jugadorCapitan1.coordenadaX;
+         System.out.println(coordenadaX);
+         columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Capitan 1");
+         jugadorCapitan1.asignacionCoordenadaY(columna);
+         coordenadaY = jugadorCapitan1.coordenadaY;
+         System.out.println(coordenadaY);   
+         // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]"
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorCapitan1.coordenadaX, jugadorCapitan1.coordenadaY, jugadorCapitan1.tipo);
+         
+         // coordenadas del barco Capitan2 (del jugador)
+         fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Capitan 2");
+         jugadorCapitan2.asignacionCoordenadaX(fila);
+         coordenadaX = jugadorCapitan2.coordenadaX;
+         System.out.println(coordenadaX);
+         columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Capitan 2");
+         jugadorCapitan2.asignacionCoordenadaY(columna);
+         coordenadaY = jugadorCapitan2.coordenadaY;
+         System.out.println(coordenadaY); 
+        // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]"
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorCapitan2.coordenadaX, jugadorCapitan2.coordenadaY, jugadorCapitan2.tipo);
+         
+        // coordenadas del barco Teniente1 (del jugador)
+          fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Teniente 1");
+         jugadorTeniente1.asignacionCoordenadaX(fila);
+         coordenadaX = jugadorTeniente1.coordenadaX;
+         System.out.println(coordenadaX);
+         columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Teniente 1");
+         jugadorTeniente1.asignacionCoordenadaY(columna);
+         coordenadaY = jugadorTeniente1.coordenadaY;
+         System.out.println(coordenadaY); 
+        // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]"
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorTeniente1.coordenadaX, jugadorTeniente1.coordenadaY, jugadorTeniente1.tipo);
+         
+         // coordenadas del barco Teniente2 (del jugador)  
+         fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Teniente 2");
+         jugadorTeniente2.asignacionCoordenadaX(fila);
+         coordenadaX = jugadorTeniente2.coordenadaX;
+         System.out.println(coordenadaX);
+         columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Teniente 2");
+         jugadorTeniente2.asignacionCoordenadaY(columna);
+         coordenadaY = jugadorTeniente2.coordenadaY;
+         System.out.println(coordenadaY);
+         // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]"
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorTeniente2.coordenadaX, jugadorTeniente2.coordenadaY, jugadorTeniente2.tipo);
+         
+         // coordenadas del barco Teniente3 (del jugador)
+         fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Teniente 3");
+         jugadorTeniente3.asignacionCoordenadaX(fila);
+         coordenadaX = jugadorTeniente3.coordenadaX;
+         System.out.println(coordenadaX);
+         columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Teniente 3");
+         jugadorTeniente3.asignacionCoordenadaY(columna);
+         coordenadaY = jugadorTeniente3.coordenadaY;
+         System.out.println(coordenadaY);
+         // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]"
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1, jugadorTeniente3.coordenadaX, jugadorTeniente3.coordenadaY, jugadorTeniente3.tipo);
+         
+         // Se imprime el tablero para ver la ubicacion de los barcos 
+         
+         JOptionPane.showMessageDialog(null, "Este es su tablero propio");
+         tableroPropio.mostrarMapa(tableroPropio1);
+         
+         
+         
+       
+
+
+      // falta programar el tablero, ubicacion de barcos del  CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         /* este es el menu de opciones que tiene el jugador, meter todo esto como un metodo y llamarlo cada vez que el jugador tiene el turno. (falta completar las opciones), el turno del jugador termina solo
        si selecciona el caso 1.*/

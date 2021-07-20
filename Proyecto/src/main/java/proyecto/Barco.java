@@ -34,27 +34,27 @@ public class Barco {
        int coordenadaX;
        if (letra.equals("A")) {
       coordenadaX = 1;
-      coordenadaX = this.coordenadaX;
+      this.coordenadaX = coordenadaX;
        }
        if (letra.equals("B")) {     
       coordenadaX = 2;  
-      coordenadaX = this.coordenadaX;
+      this.coordenadaX = coordenadaX;
        }
       if (letra.equals("C")) {     
       coordenadaX = 3; 
-      coordenadaX = this.coordenadaX;
+      this.coordenadaX = coordenadaX;
        }
        if (letra.equals("D")) { 
        coordenadaX = 4;
-       coordenadaX = this.coordenadaX;
+       this.coordenadaX = coordenadaX;
        }
        if (letra.equals("E")) {    
       coordenadaX = 5;
-      coordenadaX = this.coordenadaX;
+      this.coordenadaX = coordenadaX;
        }
        if (letra.equals("F")) {
       coordenadaX = 6;   
-      coordenadaX = this.coordenadaX;
+      this.coordenadaX = coordenadaX;
        }
    JOptionPane.showMessageDialog(null, "Usted selecciono la fila "+ letra);
        
@@ -82,7 +82,7 @@ public class Barco {
              this.coordenadaY = coordenadaY;
               } 
            if(numero.equals("5")){
-             coordenadaY = 6;
+             coordenadaY = 5;
              this.coordenadaY = coordenadaY;
               } 
        if(numero.equals("6")){
