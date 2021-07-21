@@ -149,12 +149,34 @@ public class NewMain {
          tableroPropio.mostrarMapa(tableroPropio1);
          
          
+         // se crea el tablero para la CPU.
          
+         Tablero tableroCPU = new Tablero(); 
+         String tableroCPU1 [][] = new String [7][7];
+        // Se rellena el tablero CPU
+       tableroCPU.creacionMarTablero(tableroCPU1);
+       tableroCPU.creacionFilaColumna(tableroCPU1);
        
+         // coordenadas del barco Almirante1 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 1, 1, cpuAlmirante1.tipo);
+         // coordenadas del barco Capitan1 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 2, 2, cpuCapitan1.tipo);
+         // coordenadas del barco Capitan2 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 3, 3, cpuCapitan2.tipo);
+         // coordenadas del barco Teniente1 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 4, 4, cpuTeniente1.tipo);
+         // coordenadas del barco Teniente2 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 5, 5, cpuTeniente2.tipo);
+         // coordenadas del barco Teniente3 (del CPU)
+         tableroCPU.ingresaCoordenadasXYTablero(tableroCPU1, 6, 6, cpuTeniente3.tipo);
+         
+        System.out.println(); // linea de separacion de tableros.
+         
+        
+        JOptionPane.showMessageDialog(null, "este es el tablero de su oponente"); // !!!!!!!!!!!!!!!!!!!!!!!!!!! Eliminar esta linea de codigo solo es para testear el mapa del CPU
+         tableroCPU.mostrarMapa(tableroCPU1); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Eliminar esta linea de codigo solo es para testear el mapa del CPU
 
-
-      // falta programar el tablero, ubicacion de barcos del  CPU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+      
         /* este es el menu de opciones que tiene el jugador, meter todo esto como un metodo y llamarlo cada vez que el jugador tiene el turno. (falta completar las opciones), el turno del jugador termina solo
        si selecciona el caso 1.*/
         

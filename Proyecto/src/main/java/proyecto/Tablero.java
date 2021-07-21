@@ -59,12 +59,14 @@ public class Tablero {
     Tablero [coordenadaX][coordenadaY] = tipoBarco;
     
 }
-     }
+     
      
  
+
+
+
   
-  
-  
+    } 
 
        
    
