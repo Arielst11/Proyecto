@@ -94,16 +94,12 @@ public class Barco {
    }
 
     
-    
-    
- 
-    
-    
+   
+          
     
     
     
-    
-    
+  
     
     
     

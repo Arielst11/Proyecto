@@ -6,7 +6,7 @@
 package proyecto;
 
 import javax.swing.JOptionPane;
-
+import java.lang.Math;
 /**
  *
  * @author asanc
@@ -16,9 +16,14 @@ public class NewMain {
     public static void main(String[] args) {
         // se se crean nuevos items de cada clase.
         Jugador jugador1 = new Jugador();
-        Menu menu1 = new Menu();
+        Menu menu1 = new Menu(); // Menu del jugador
         CPU CPU1 = new CPU();
-    
+        Menu menu2 = new Menu(); // Menu del CPU
+     // se crea un marcador
+        
+        Marcador marcador1 = new Marcador();
+        
+        
        // se crean los barcos mediante el constructor para el jugador
        
        Barco jugadorAlmirante1 = new Barco("a",4);
@@ -38,7 +43,7 @@ public class NewMain {
        Barco cpuTeniente3 = new Barco("t3",1);
         
         
-        
+       
            
         //INICIO DEL PROGRAMA! *************************************************
         
@@ -60,7 +65,7 @@ public class NewMain {
         // se crea el arreglo String TableroPropio y se rellenan los campos principales;
         //se imprime para ver el resultado.
         
-        Tablero tableroPropio = new Tablero();
+        Tablero tableroPropio = new Tablero();          /// fue la unica forma de aplicar los metodos de la clase tablero al arreglo string... 
         String tableroPropio1 [][] = new String[7][7];
         
        tableroPropio.creacionMarTablero(tableroPropio1);
@@ -70,6 +75,24 @@ public class NewMain {
        
          JOptionPane.showMessageDialog(null, "Para jugar, usted debe agregar 6 barcos, usted tiene 1 barco Almirante, 2 barcos Capitan y 3 barcos Teniente ");    
         //se piden las coordenadas de los barcos y se ingresan al tableroPropio1 (arreglo)
+        
+        /*Barco [] listAlmirantes = {jugadorAlmirate1, jugadorCapitan1, jugadorCapitan2,jugadorTeniente1, jugadorTeniente2, jugadorTeniente3 };
+        for (int i = 0; i < listaAlimirantes.length; i++) {
+            String[] strings = tableroPropio1[i];
+          //coordenadas barco Almirante1 (del jugador)
+         String fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Admirante");
+         listaAlmirantes[i].asignacionCoordenadaX(fila);
+         int coordenadaX =  listaAlmirantes[i].coordenadaX;
+         System.out.println(coordenadaX);
+         String columna = JOptionPane.showInputDialog("ingrese la coordenada de la Columna (numero) donde quiere ingresar el Barco Admirante");
+          listaAlmirantes[i].asignacionCoordenadaY(columna);
+         int coordenadaY =  listaAlmirantes[i].coordenadaY;
+         System.out.println(coordenadaY);   
+        // se ingresan las coordenadas del barco en el Tablero "String tableroPropio1 [][] = new String[7][7]" Con un metodo
+         tableroPropio.ingresaCoordenadasXYTablero(tableroPropio1,  listaAlmirantes[i].coordenadaX,  listaAlmirantes[i].coordenadaY,  listaAlmirantes[i].tipo);  
+        }
+        */
+        
         
         //coordenadas barco Almirante1 (del jugador)
          String fila = JOptionPane.showInputDialog("ingrese la coordenada de la fila (letra) donde quiere ingresar el Barco Admirante");
@@ -173,7 +196,7 @@ public class NewMain {
         System.out.println(); // linea de separacion de tableros.
          
         
-        JOptionPane.showMessageDialog(null, "este es el tablero de su oponente"); // !!!!!!!!!!!!!!!!!!!!!!!!!!! Eliminar esta linea de codigo solo es para testear el mapa del CPU
+        JOptionPane.showMessageDialog(null, "este es el tablero de su oponente"); // !!!!!!!!!!!!!!!!!!!!!!!!! Eliminar esta linea de codigo solo es para testear el mapa del CPU
         tableroCPU.mostrarMapa(tableroCPU1); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Eliminar esta linea de codigo solo es para testear el mapa del CPU
          
         // se crea el tablero de ataque.
@@ -192,10 +215,9 @@ public class NewMain {
        
        while (finalizadorJuego == 0){
             
-        /* if(barcosJugador = 0 || barcosCPU = 0 ){
-            finalizadorJuego = 1;
-        }
-        */    
+        
+          
+        
        int terminadorTurno = 1;
        while (terminadorTurno == 1){
        int seleccion = Integer.parseInt(JOptionPane.showInputDialog("Este es su turno, escriba el numero de la opcion que quiere realizar"));
@@ -214,12 +236,7 @@ public class NewMain {
              menu1.ataqueCoordenadaY(ataqueY);
               
              
-             // en caso de atacar un espacio sin barco
-             if(tableroCPU1[menu1.coordenadaX][menu1.coordenadaY].equals("=")){
-               tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "0";
-               tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "0"; 
-               JOptionPane.showMessageDialog(null,"su ataque fallo, su ataque cayo en el mar");        
-             }
+            
              //En caso de atacar un espacio que ya se habia atacado sin barco
               if(tableroCPU1[menu1.coordenadaX][menu1.coordenadaY].equals("0")){
                tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "0";
@@ -232,7 +249,14 @@ public class NewMain {
                tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "X"; 
                JOptionPane.showMessageDialog(null,"su ataque fallo, ustd ya habia destruido este barco");        
              }
-             
+          
+              // en caso de atacar un espacio sin barco
+             if(tableroCPU1[menu1.coordenadaX][menu1.coordenadaY].equals("=")){
+               tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "0";
+               tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "0"; 
+               JOptionPane.showMessageDialog(null,"su ataque fallo, su ataque cayo en el mar");        
+             }
+            
              // en caso de atacar al Almirante1
              if(tableroCPU1[menu1.coordenadaX][menu1.coordenadaY].equals("a")){
                cpuAlmirante1.vida = cpuAlmirante1.vida - 1;
@@ -240,7 +264,7 @@ public class NewMain {
                
                tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "*";
             // en caso de destruir el Almirante1
-               if(jugadorAlmirante1.vida == 0){
+               if(cpuAlmirante1.vida == 0){
                   barcosCPU = barcosCPU - 1;
                 JOptionPane.showMessageDialog(null, "Usted undio el barco Almirante del jugador " + CPU1.getNombre());
                 tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "X";
@@ -254,7 +278,7 @@ public class NewMain {
                
                tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "*";
             // en caso de destruir el Capitan1
-               if(jugadorCapitan1.vida == 0){
+               if(cpuCapitan1.vida == 0){
                   barcosCPU = barcosCPU - 1;
                 JOptionPane.showMessageDialog(null, "Usted undio el barco Capitan1 del jugador " + CPU1.getNombre());
                 tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "X";
@@ -268,7 +292,7 @@ public class NewMain {
              
                tableroAtaque1[menu1.coordenadaX][menu1.coordenadaY] = "*";
             // en caso de destruir el Capitan2
-               if(jugadorCapitan2.vida == 0){
+               if(cpuCapitan2.vida == 0){
                   barcosCPU = barcosCPU - 1;
                 JOptionPane.showMessageDialog(null, "Usted undio el barco Capitan2 del jugador " + CPU1.getNombre());
                 tableroCPU1[menu1.coordenadaX][menu1.coordenadaY] = "X";
@@ -340,7 +364,27 @@ public class NewMain {
                 break;
            
             case 5:
+                JOptionPane.showMessageDialog(null, "en la consola se muestra la vida de sus barcos y la vida de los barcos del CPU");
              // mostrar el marcador (barcos del usuario y barcos del CPU, destruidos, danados y nuevos) !!!!!!!!!!!!!!!!!!!!!!!!    
+               
+                System.out.println("esta es la vida de sus barcos");
+                
+                marcador1.vidaBarco(jugadorAlmirante1);
+                marcador1.vidaBarco(jugadorCapitan1);
+                marcador1.vidaBarco(jugadorCapitan2);
+                marcador1.vidaBarco(jugadorTeniente1);
+                marcador1.vidaBarco(jugadorTeniente2);
+                marcador1.vidaBarco(jugadorTeniente3);
+                
+                System.out.println("esta es la vida de los barcos del jugador " + CPU1.getNombre());
+                
+                marcador1.vidaBarco(cpuAlmirante1);
+                marcador1.vidaBarco(cpuCapitan1);
+                marcador1.vidaBarco(cpuCapitan2);
+                marcador1.vidaBarco(cpuTeniente1);
+                marcador1.vidaBarco(cpuTeniente2);
+                marcador1.vidaBarco(cpuTeniente3);
+                
                 
                 break;
             case 6:
@@ -350,21 +394,47 @@ public class NewMain {
                 JOptionPane.showMessageDialog(null, "tiene que seleccionar un valor entre 1 - 6, el valor 6 le permite ver las opciones disponibles");
             
         } 
-       
-       ///programar los turnos del CPU aqui. (SOLO ATACAR ALEATORIAMENTE) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-       
-       
-       
-       }
+     
+          } // este Cierra el while de turnos
+              
+
+
+// estos son los ataques del CPU1
+
+              
+               
+       int cpuCoordenadaAtaqueX = (int) (Math.random() * 6)+1;
+       int cpuCoordenadaAtaqueY = (int) (Math.random() * 6)+1;
+      
+       CPU1.cpuAtaqueFallado(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1);
+       CPU1.cpuAtaqueAlmirante1(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorAlmirante1 );
+       CPU1.cpuAtaqueCapitan1(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorCapitan1);
+       CPU1.cpuAtaqueCapitan2(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorCapitan2);
+       CPU1.cpuAtaqueTeniente1(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorTeniente1);
+       CPU1.cpuAtaqueTeniente2(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorTeniente2);
+       CPU1.cpuAtaqueTeniente3(tableroPropio1, cpuCoordenadaAtaqueX, cpuCoordenadaAtaqueY, CPU1, jugadorTeniente3);
+
+   
     
+   
+    
+       if (barcosJugador == 0 || barcosCPU == 0 ){
+          finalizadorJuego = 1;
+         }
         
-        
-        
-        
-        
-        
-        
-        } //ESTE CIERRA EL WHILE DE TURNOS 
-    }
-}
+        } //ESTE CIERRA EL WHILE DEl juego
+    
+       if (barcosCPU == 0){
+           JOptionPane.showMessageDialog(null,"el jugador " + jugador1.getNombre() + " ha ganado");
+       }
+      if (barcosJugador == 0){
+           JOptionPane.showMessageDialog(null,"el jugador " + CPU1.getNombre() + " ha ganado");
+       }
+       
+    
+    } // ESTE CIERRA EL PUBLIC VOID
+
+
+}// ESTE CIERRA EL MAIN
+
 
