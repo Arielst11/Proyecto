@@ -12,8 +12,6 @@ import javax.swing.JOptionPane;
  * @author asanc
  */
 public class Jugador {
-    
-    
 
     private String nombre;
     private int edad;
@@ -68,10 +66,4 @@ public class Jugador {
         this.edad = edad;
     }
 
-   
 }
-
-    
-   
-    
-
