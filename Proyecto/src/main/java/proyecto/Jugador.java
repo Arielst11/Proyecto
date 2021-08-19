@@ -5,6 +5,8 @@
  */
 package proyecto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author asanc
@@ -66,4 +68,10 @@ public class Jugador {
         this.edad = edad;
     }
 
+   
 }
+
+    
+   
+    
+
